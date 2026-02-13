@@ -32,6 +32,17 @@ export default function SignIn(){
                 <div className="flex justify-center pt-4">
                 <Button onClick={signin} loading={false} variant="primary" text="Signin" fullWidth={true} />
                 </div>
+                
+
+           <p className="text-gray-400 text-lg">
+            Or{" "}
+            <button
+              onClick={() => navigate("/signup")}
+              className="text-blue-400 hover:text-blue-300 underline"
+            >
+              sign up for a new account
+            </button>
+            </p>
             </div>
     </div>
 }
