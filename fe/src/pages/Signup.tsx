@@ -6,8 +6,8 @@ import { Input } from "../components/Input";
 import { Button } from "../components/button";
 
 export default function SignUp(){
-        const usernameRef = useRef<any>();
-        const passwordRef = useRef<any>();
+      const usernameRef = useRef<HTMLInputElement>(null);
+    const passwordRef = useRef<HTMLInputElement>(null);
         const navigate = useNavigate();
 
         async function signup(){

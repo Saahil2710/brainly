@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import { CreateComponentModel } from '../components/CreateModelComponent';
 import { Button } from '../components/button';
 import { PlusIcon } from '../Icons/PlusIcon';
-import { ShareIcon } from '../Icons/ShareIcon';
 import { Card } from '../components/Card';
 import Sidebar from '../components/Sidebar';
 import { useContent } from '../hooks/useContent';
@@ -43,12 +42,14 @@ export function Dashborad(){
         </div>
     <div className="flex gap-4 flex-wrap">
   {contents.map(({ _id, type, link, title }) => (
-    <Card
-    key={_id}
-    type={type}
-    link={link}
-    title={title}
-    />
+
+        <Card
+        _id={_id}
+        title={title}
+        link={link}
+        type={type}
+        />
+
     ))}
     </div>
 

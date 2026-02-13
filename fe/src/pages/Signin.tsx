@@ -6,8 +6,8 @@ import { Input } from "../components/Input";
 import { Button } from "../components/button";
 
 export default function SignIn(){
-    const usernameRef = useRef<any>();
-    const passwordRef = useRef<any>();
+    const usernameRef = useRef<HTMLInputElement>(null);
+    const passwordRef = useRef<HTMLInputElement>(null);
     const navigate = useNavigate();//
 
             async function signin(){
@@ -30,7 +30,7 @@ export default function SignIn(){
                 <Input  reference= {usernameRef} placeholder="Username" />
                 <Input  reference= {passwordRef} placeholder="Password" />
                 <div className="flex justify-center pt-4">
-                <Button onClick={signin} loading={false} variant="primary" text="Signin"  fullWidth={true}/>
+                <Button onClick={signin} loading={false} variant="primary" text="Signin" fullWidth={true} />
                 </div>
             </div>
     </div>

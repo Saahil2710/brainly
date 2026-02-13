@@ -2,8 +2,8 @@ import type { ReactElement } from "react"
 
 interface ButtonProps{
     variant : "primary" | "secondary",
-    text:"string",
-    startIcon:ReactElement;
+    text:string,
+    startIcon?:ReactElement;
     onClick?:()=>void;
     fullWidth?:boolean;
     loading?:boolean; 

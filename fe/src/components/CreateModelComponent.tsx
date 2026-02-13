@@ -5,16 +5,19 @@ import { Button } from "./button";
 import axios from "axios";
 import { BACKEND_URL } from "../config";
 
-enum ContentType{
-    Youtube="youtube",
-    X="x"
+export type ContentType = "youtube" | "x";
+
+
+
+interface CreatModelProps{
+    open:boolean;
+    onClose:()=>void;
 }
 
-
-export function CreateComponentModel({open,onClose}){
+export function CreateComponentModel({open,onClose}:CreatModelProps){
     const titleRef = useRef<HTMLInputElement>(null) 
     const linkRef = useRef<HTMLInputElement>(null) 
-    const [type,setType] = useState(ContentType.Youtube);
+    const [type,setType] = useState<ContentType>("youtube");
 
 
        async function addContent(){
@@ -60,12 +63,14 @@ export function CreateComponentModel({open,onClose}){
                     <div>
                         <h1>Type</h1>
                         <div className="flex gap-4 m-5">
-                        <Button text="youtube" variant={type === ContentType.Youtube ? "primary" : "secondary"} onClick={()=>{
-                            setType(ContentType.Youtube)
+
+                        <Button text="youtube" variant={type === "youtube" ? "primary" : "secondary"} onClick={()=>{
+                            setType("youtube")
+
                         }}/>
 
-                        <Button text="x" variant={type === ContentType.X ? "primary" : "secondary"} onClick={()=>{
-                            setType(ContentType.X)
+                        <Button text="x" variant={type === "x" ? "primary" : "secondary"} onClick={()=>{
+                            setType("x")
                         }}/>
                         </div>
 
